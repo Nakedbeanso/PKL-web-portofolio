@@ -4,7 +4,7 @@ import pp from "../assets/pp.jpeg";
 const Profile = () => {
   return (
     <>
-      <Card className="max-w-full m-3">
+      <Card className="max-w-full m-3 hover:bg-gray-200 transition duration-300">
         <div className="flex justify-between">
           <div className="flex flex-col justify-start pb-10 ml-80 mt-4 items-center">
             <img

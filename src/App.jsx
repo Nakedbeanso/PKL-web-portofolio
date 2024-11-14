@@ -5,6 +5,7 @@ import './App.css'
 import Header from './Components/Header'
 import Profile from './Components/Profile'
 import Detail from './Components/Detail'
+import Experience from './Components/Experience'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Header></Header>
       <Profile></Profile>
       <Detail></Detail>
+      <Experience></Experience>
 
 
     </>
