@@ -6,6 +6,8 @@ import Header from './Components/Header'
 import Profile from './Components/Profile'
 import Detail from './Components/Detail'
 import Experience from './Components/Experience'
+import TechCard from './Components/TechCard'
+import Footer from './Components/Footer'
 
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
       <Header></Header>
       <Profile></Profile>
       <Detail></Detail>
-      <Experience></Experience>
+      <TechCard></TechCard>
+      <Footer></Footer>
 
 
     </>
