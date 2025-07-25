@@ -1,42 +1,132 @@
-import React from "react";
-import { Card } from "flowbite-react";
+import { Box, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import {
+  BsFacebook,
+  BsGithub,
+  BsLinkedin,
+  BsTwitter,
+  BsInstagram,
+  BsEnvelope,
+  BsTelephone,
+} from "react-icons/bs";
 
-const Footer = () => {
+const footerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export const Footer = () => {
   return (
-    <footer className="text-black py-6">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1: Contact Information */}
-          <Card className=" border-none shadow-lg text-center">
-            <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-            <p className="text-sm mb-4">
-              Address: Jl.Situgunting Timur 
-            </p>
-            <p className="text-sm">Phone: +62 831 0815 1831</p>
-            <p className="text-sm">Email: rizalsuhari@gmail.com</p>
-          </Card>
+    <motion.div
+      variants={footerVariants}
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 0.5 }}
+    >
+      <Box
+        sx={{
+          backgroundColor: "#1a202c",
+          color: "white",
+          py: 6,
+          px: { xs: 2, sm: 4 },
+        }}
+      >
+        <Box
+          sx={{
+            maxWidth: "1200px", // batas maksimum untuk desktop
+            mx: "auto", // center secara horizontal
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",       // 1 kolom di layar kecil
+              sm: "repeat(2, 1fr)", 
+              md: "repeat(3, 1fr)", // 3 kolom di desktop
+            },
+            gap: 6,
+          }}
+        >
+          {/* Portfolio Section */}
+          <Box>
+            <Typography
+              variant="h6"
+              sx={{ color: "#4f8a8b", fontWeight: "bold", fontSize: "1.25rem" }}
+            >
+              Portfolio
+            </Typography>
+            <Typography sx={{ color: "gray", mt: 1, fontSize: "1rem" }}>
+              Your one-stop solution for web development and design.
+            </Typography>
+          </Box>
 
-          {/* Card 2: Quick Links */}
-          <Card className=" border-none shadow-lg text-center">
-            <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-            <ul className="text-sm">
-              <li className="mb-2 hover:text-gray-400">
-                <a href="#home">Home</a>
-              </li>
-              <li className="mb-2 hover:text-gray-400">
-                <a href="#about">About</a>
-              </li>
-            </ul>
-          </Card>
+          {/* Contact Section */}
+          <Box>
+            <Typography
+              variant="h6"
+              sx={{ color: "#4f8a8b", fontWeight: "bold", fontSize: "1.25rem" }}
+            >
+              Contact Us
+            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
+              <BsEnvelope style={{ marginRight: "8px", color: "gray", fontSize: "1.25rem" }} />
+              <Typography sx={{ color: "gray", fontSize: "1rem" }}>
+                info@portfolio.com
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
+              <BsTelephone style={{ marginRight: "8px", color: "gray", fontSize: "1.25rem" }} />
+              <Typography sx={{ color: "gray", fontSize: "1rem" }}>
+                +1 234 567 890
+              </Typography>
+            </Box>
+          </Box>
 
-        </div>
+          {/* Social Media Section */}
+          <Box sx={{ textAlign: { xs: "left", md: "center" } }}>
+            <Typography
+              variant="h6"
+              sx={{ color: "#4f8a8b", fontWeight: "bold", fontSize: "1.25rem", mb: 2 }}
+            >
+              Follow Us
+            </Typography>
+            <Box sx={{ display: "flex", justifyContent: { xs: "start", md: "center" }, gap: 2 }}>
+              {[BsFacebook, BsGithub, BsLinkedin, BsTwitter, BsInstagram].map((Icon, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "gray",
+                    fontSize: "1.5rem",
+                    transition: "color 0.3s",
+                  }}
+                  className="hover:text-blue-500"
+                >
+                  <Icon />
+                </a>
+              ))}
+            </Box>
+          </Box>
+        </Box>
 
-        {/* Copyright */}
-        <div className="text-center mt-6 text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} MyWebsite. All rights reserved.
-        </div>
-      </div>
-    </footer>
+        {/* Copyright Section */}
+        <Box
+          sx={{
+            maxWidth: "1200px",
+            mx: "auto",
+            mt: 6,
+            borderTop: "1px solid #2d3748",
+            pt: 2,
+            display: "flex",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <Typography sx={{ color: "gray", fontSize: "0.9rem" }}>
+            &copy; 2024 Portfolio. All rights reserved.
+          </Typography>
+        </Box>
+      </Box>
+    </motion.div>
   );
 };
 
