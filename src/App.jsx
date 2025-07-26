@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Components/Header'
 import Profile from './Pages/Profile'
-import Detail from './Pages/Detail'
-import TechCard from './Pages/TechCard'
+import About from './Pages/About'
+import Skills from './Pages/Skills'
 import Footer from './Components/Footer'
 
 
@@ -16,6 +16,8 @@ function App() {
     <>
       <Header></Header>
       <Profile></Profile>
+      <About></About>
+      <Skills></Skills>
       <Footer></Footer>
 
 

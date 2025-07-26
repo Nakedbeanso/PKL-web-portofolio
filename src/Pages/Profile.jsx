@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Card, Typography, Box, IconButton } from "@mui/material";
 import { ReactTyped } from "react-typed";
-import { BsFacebook, BsGithub, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsInstagram } from "react-icons/bs";
 import Image from "../assets/pp.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,10 +13,8 @@ export const Profile = () => {
   }, []);
 
   const socialIcons = [
-    { icon: <BsFacebook />, color: "#3b5998", label: "Facebook" },
     { icon: <BsGithub />, color: "#333", label: "GitHub" },
     { icon: <BsLinkedin />, color: "#0077b5", label: "LinkedIn" },
-    { icon: <BsTwitter />, color: "#1DA1F2", label: "Twitter" },
     { icon: <BsInstagram />, color: "#E1306C", label: "Instagram" }
   ];
 

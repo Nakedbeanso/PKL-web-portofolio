@@ -11,8 +11,6 @@ export const Header = () => {
       Home: "#profile",
       About: "#about",
       Skills: "#skill",
-      Projects: "#project",
-      "Contact Me": "#contact",
     };
 
     const targetId = hrefMap[link];
@@ -57,7 +55,7 @@ export const Header = () => {
             isOpen ? "block" : "hidden"
           } md:flex md:space-x-6 text-lg text-gray-700 font-medium`}
         >
-          {["Home", "About", "Skills", "Projects", "Contact Me"].map(
+          {["Home", "About", "Skills"].map(
             (link, index) => (
               <a
                 key={index}

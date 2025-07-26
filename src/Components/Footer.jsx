@@ -1,10 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import {
-  BsFacebook,
   BsGithub,
   BsLinkedin,
-  BsTwitter,
   BsInstagram,
   BsEnvelope,
   BsTelephone,
@@ -33,13 +31,13 @@ export const Footer = () => {
       >
         <Box
           sx={{
-            maxWidth: "1200px", // batas maksimum untuk desktop
-            mx: "auto", // center secara horizontal
+            maxWidth: "1200px", 
+            mx: "auto", 
             display: "grid",
             gridTemplateColumns: {
-              xs: "1fr",       // 1 kolom di layar kecil
+              xs: "1fr",      
               sm: "repeat(2, 1fr)", 
-              md: "repeat(3, 1fr)", // 3 kolom di desktop
+              md: "repeat(3, 1fr)", 
             },
             gap: 6,
           }}
@@ -74,12 +72,11 @@ export const Footer = () => {
             <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
               <BsTelephone style={{ marginRight: "8px", color: "gray", fontSize: "1.25rem" }} />
               <Typography sx={{ color: "gray", fontSize: "1rem" }}>
-                +1 234 567 890
+                +62 851 7686 4900
               </Typography>
             </Box>
           </Box>
 
-          {/* Social Media Section */}
           <Box sx={{ textAlign: { xs: "left", md: "center" } }}>
             <Typography
               variant="h6"
@@ -88,7 +85,7 @@ export const Footer = () => {
               Follow Us
             </Typography>
             <Box sx={{ display: "flex", justifyContent: { xs: "start", md: "center" }, gap: 2 }}>
-              {[BsFacebook, BsGithub, BsLinkedin, BsTwitter, BsInstagram].map((Icon, index) => (
+              {[BsGithub, BsLinkedin, BsInstagram].map((Icon, index) => (
                 <a
                   key={index}
                   href="#"
@@ -108,7 +105,6 @@ export const Footer = () => {
           </Box>
         </Box>
 
-        {/* Copyright Section */}
         <Box
           sx={{
             maxWidth: "1200px",
